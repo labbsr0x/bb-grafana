@@ -1,0 +1,42 @@
+version: '3.5'
+
+services:
+    grafana:
+        image: labbsr0x/bb-grafana
+        build: .
+        ports:
+            - 3000:3000
+        environment: 
+            - GF_SECURITY_ADMIN_USER=big-brother
+            - GF_SECURITY_ADMIN_PASSWORD=big-brother
+
+    metrics-generator:
+        image: abilioesteves/metrics-generator
+        ports:
+            - 32865:32865
+        environment: 
+            - REGISTRY_SERVICE=metrics-generator
+            - REGISTRY_ETCD_BASE=/example
+            - REGISTRY_ETCD_URL=http://etcd:2379
+
+    etcd:
+        image: quay.io/coreos/etcd:v3.2.25
+        ports:
+            - 2379
+        environment:
+            - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+            - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+
+    bb-promster:
+        image: labbsr0x/bb-promster:latest
+        depends_on:
+            - etcd
+            - metrics-generator
+        ports:
+            - 9090:9090
+        environment:
+            - REGISTRY_SERVICE=metrics-generator
+            - REGISTRY_ETCD_BASE=/example
+            - BB_PROMSTER_LEVEL=1
+            - ETCD_URLS=http://etcd:2379
+            - SCRAPE_ETCD_PATH=/example/metrics-generator

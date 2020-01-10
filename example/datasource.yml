@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+- name: bb-promster
+  type: prometheus
+  access: proxy
+  url: http://bb-promster:9090
+  isDefault: false
+  version: 1
+  editable: true
+
