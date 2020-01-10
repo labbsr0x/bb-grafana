@@ -1,4 +1,4 @@
-# BB-Grafana
+# Big Brother Grafana
 A repository to define valid Big-Brother Dashboards for Grafana
 
 # Example
