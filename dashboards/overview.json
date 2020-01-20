@@ -3,7 +3,7 @@
     {
       "name": "DS_BB-PROMSTER",
       "label": "BB Promster Datasource",
-      "description": "<< choose your BB Promster datasource >>",
+      "description": "<< choose your Big Brother Metrics datasource >>",
       "type": "datasource",
       "pluginId": "prometheus",
       "pluginName": "Prometheus"
@@ -151,7 +151,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "dependency_up{name=\"$dependency\"}",
+          "expr": "dependency_up{name=\"$dependency\", prsn=\"$prsn\"}",
           "instant": true,
           "legendFormat": "{{name}}",
           "refId": "A"
