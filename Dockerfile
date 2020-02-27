@@ -38,7 +38,7 @@ ENV GF_SECURITY_ADMIN_PASSWORD ${userpassword}
 USER root
 
 RUN chmod -R 777 /etc/grafana/provisioning/datasources/
-ADD datasource.yml /etc/grafana/provisioning/datasources/
+ADD /example/datasource.yml /etc/grafana/provisioning/datasources/
 
 VOLUME [ "/data" ]
 EXPOSE 3000
