@@ -1041,7 +1041,7 @@
   ],
   "refresh": "30s",
   "schemaVersion": 21,
-  "style": "light",
+  "style": "dark",
   "tags": [],
   "templating": {
     "list": [
