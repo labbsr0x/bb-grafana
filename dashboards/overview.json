@@ -253,7 +253,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "avg(sum_over_time(request_seconds_sum:irate{type=\"$type\", prsn=\"$prsn\"}[1d])/sum_over_time(request_seconds_count:irate{type=\"$type\", prsn=\"$prsn\"}[1d]))",
+          "expr": "avg(sum_over_time(request_seconds_sum:irate{type=\"$type\", prsn=\"$prsn\"}[1d])/sum_over_time(request_seconds_count:irate{type=\"$type\", prsn=\"$prsn\"}[1d]) > 0)",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 1,
