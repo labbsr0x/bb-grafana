@@ -69,7 +69,7 @@
   "panels": [
     {
       "collapsed": false,
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -90,7 +90,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -174,7 +174,7 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -197,7 +197,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "decimals": 5,
       "format": "s",
       "gauge": {
@@ -287,7 +287,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#C4162A"
       ],
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "decimals": 5,
       "format": "reqps",
       "gauge": {
@@ -375,7 +375,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "format": "percentunit",
       "gauge": {
         "maxValue": 100,
@@ -458,7 +458,7 @@
           "value": "avg"
         }
       ],
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "fontSize": "100%",
       "gridPos": {
         "h": 10,
@@ -530,7 +530,7 @@
           "value": "avg"
         }
       ],
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "fontSize": "100%",
       "gridPos": {
         "h": 10,
@@ -602,7 +602,7 @@
           "value": "avg"
         }
       ],
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "fontSize": "100%",
       "gridPos": {
         "h": 10,
@@ -669,7 +669,7 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -686,7 +686,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "description": "Throughput and Latency of $addr",
       "fill": 1,
       "fillGradient": 0,
@@ -805,7 +805,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "description": "Throughput and Error rate of $addr",
       "fill": 1,
       "fillGradient": 0,
@@ -924,7 +924,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_BB-PROMSTER}",
+      "datasource": "$datasource",
       "description": "Latency and Error rate of $addr",
       "fill": 1,
       "fillGradient": 0,
@@ -1048,7 +1048,7 @@
       {
         "allValue": "all",
         "current": {},
-        "datasource": "${DS_BB-PROMSTER}",
+        "datasource": "$datasource",
         "definition": "dependency_up",
         "hide": 0,
         "includeAll": true,
@@ -1070,7 +1070,7 @@
       {
         "allValue": "All",
         "current": {},
-        "datasource": "${DS_BB-PROMSTER}",
+        "datasource": "$datasource",
         "definition": "request_seconds_count:irate",
         "hide": 0,
         "includeAll": true,
@@ -1092,7 +1092,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_BB-PROMSTER}",
+        "datasource": "$datasource",
         "definition": "request_seconds_count:irate",
         "hide": 0,
         "includeAll": false,
@@ -1114,7 +1114,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_BB-PROMSTER}",
+        "datasource": "$datasource",
         "definition": "request_seconds_count:irate",
         "hide": 0,
         "includeAll": false,
@@ -1132,6 +1132,19 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+	  },
+	  {
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
       }
     ]
   },
